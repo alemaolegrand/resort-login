@@ -1,0 +1,62 @@
+<div class="flex w-screen h-screen m-0 p-0 justify-center items-center bg-cover bg-no-repeat bg-center bg-[url('https://images.unsplash.com/photo-1605537964076-3cb0ea2ff329?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2032&q=80')]">
+
+<%= form_with(model: user) do |form| %>
+  <% if user.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(user.errors.count, "error") %> prohibited this user from being saved:</h2>
+
+      <ul>
+        <% user.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+
+  <div class="flex flex-col justify-center items-center px-20 py-10 rounded-xl backdrop-blur-sm sm:py-10 md:p-5">
+    <div class=" text-center">
+
+    <div class="flex text-start text-sm flex-col gap-5">
+
+      <div>
+        <%= form.label :name, style: "display: block" %>
+        <%= form.text_field :name %>
+      </div>
+
+      <div>
+        <%= form.label :mobile, style: "display: block" %>
+        <%= form.text_field :mobile %>
+      </div>
+
+      <div>
+        <%= form.label :email, style: "display: block" %>
+        <%= form.text_field :email %>
+      </div>
+
+      <div>
+        <%= form.label :password, style: "display: block" %>
+        <%= form.password_field :password %>
+      </div>
+
+      <div>
+        <%= form.label :password_confirmation, style: "display: block" %>
+        <%= form.password_field :password_confirmation %>
+      </div>
+
+      <div>
+        <%= form.label :address, style: "display: block" %>
+        <%= form.text_field :address %>
+      </div>
+
+      <div>
+        <%= form.submit %>
+      </div>
+        <% end %>
+    </div>
+
+    </div>
+  </div>
+
+</div>
+

@@ -1,0 +1,41 @@
+<div class="flex w-screen h-screen m-0 p-0 justify-center items-center bg-cover bg-no-repeat bg-center bg-[url('https://images.unsplash.com/photo-1605537964076-3cb0ea2ff329?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2032&q=80')]">
+  <p id='alert'><%= alert %></p>
+
+  <div class="flex flex-col justify-center items-center px-20 py-10 rounded-xl backdrop-blur-sm sm:py-10 md:p-5">
+    <div class="text-white text-center  text-xl">
+      
+      Login no 
+      <p class="text-white font-bold text-4xl"> 
+        Resort do Kuduairo
+      </p>
+    
+    </div>
+
+
+        
+        <!-- Login -->
+    <div class="flex justify-center items-center gap-20">
+        <%= form_tag sessions_path do |form| %>
+        <div class="field">
+          <div>
+          <%= label_tag :email %>
+          <%= text_field_tag :email %>
+          </div>
+        </div>
+
+        <div class="field">
+          <%= label_tag :password %>
+          <%= password_field_tag :password %>
+        </div>
+
+        <a>
+        <button class='actions text-white bg-teal-400 px-10 py-2 rounded-full'>
+          <%= submit_tag 'Login' %>
+        </button>
+        </a>
+        
+        <% end %>
+    </div>
+
+  </div> 
+</div>
